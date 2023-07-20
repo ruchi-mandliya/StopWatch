@@ -15,7 +15,7 @@ body {
   background: white;
   font-size: 7rem;
   font-weight: 700;
-  text-shadow: 2px 2px #abf8a5;
+  text-shadow: 1.5px 1.5px #abf8a5;
   color: black;
   width: 700px;
   text-align: center;
@@ -31,9 +31,9 @@ body {
 
 button {
   background-color: #bdf445c5;
-  color: white;
+  color: rgb(255, 255, 255);
   border: none;
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: bold;
   padding: 1.5rem 4rem;
   margin: 1rem;

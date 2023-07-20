@@ -1,45 +1,45 @@
-let timerDisplay = document.querySelector(".displayTimer");
-let stopBtn = document.getElementById("stopBtn");
-let startBtn = document.getElementById("startBtn");
-let resetBtn = document.getElementById("resetBtn");
+const displayTimer = document.getElementById("timer");
+const startButton = document.getElementById("start");
+const stopButton = document.getElementById("stop");
+const resetButton = document.getElementById("reset");
 
-let msec = 00;
-let secs = 00;
-let mins = 00;
+let msecs = 0;
+let secs = 0;
+let minutes = 0;
 
-let timerId = null;
+let timerStarted = false;
 
-startBtn.addEventListener("click", function () {
-  if (timerId !== null) {
-    clearInterval(timerId);
+startButton.addEventListener("click", function () {
+  if ((timerStarted = true)) {
+    clearInterval(timerStarted);
   }
-  timerId = setInterval(startTimer, 10);
+  timerStarted = setInterval(startTimer, 10);
 });
 
-stopBtn.addEventListener("click", function () {
-  clearInterval(timerId);
+stopButton.addEventListener("click", function () {
+  clearInterval(timerStarted);
 });
 
-resetBtn.addEventListener("click", function () {
-  clearInterval(timerId);
-  timerDisplay.innerHTML = `00 : 00 : 00`;
-  msec = secs = mins = 00;
+resetButton.addEventListener("click", function () {
+  clearInterval(timerStarted);
+  displayTimer.innerHTML = `00 : 00 : 00`;
+  msecs = secs = minutes = 00;
 });
 
 function startTimer() {
-  msec++;
-  if (msec == 100) {
-    msec = 0;
+  msecs++;
+  if (msecs == 100) {
+    msecs = 0;
     secs++;
     if (secs == 60) {
       secs = 0;
-      mins++;
+      minutes++;
     }
   }
 
-  let msecString = msec < 10 ? `0${msec}` : msec;
+  let msecString = msecs < 10 ? `0${msecs}` : msecs;
   let secsString = secs < 10 ? `0${secs}` : secs;
-  let minsString = mins < 10 ? `0${mins}` : mins;
+  let minsString = minutes < 10 ? `0${minutes}` : minutes;
 
-  timerDisplay.innerHTML = `${minsString} : ${secsString} : ${msecString}`;
+  displayTimer.innerHTML = `${minsString} : ${secsString} : ${msecString}`;
 }
