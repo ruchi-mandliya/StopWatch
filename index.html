@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="timer">00:00:00</div>
+    <div className="overlay">
+      <div id="timer">00:00:00</div>
+    </div>
+
     <div id="buttons">
-      <button id="start">Start</button>
-      <button id="stop">Stop</button>
-      <button id="reset">Reset</button>
+      <button id="start" style="--clr: rgb(0, 128, 0)">Start</button>
+      <button id="stop" style="--clr: rgb(255, 0, 0)">Stop</button>
+      <button id="reset" style="--clr: rgb(0, 0, 255)">Reset</button>
     </div>
     <script src="script.js"></script>
   </body>
