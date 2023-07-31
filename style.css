@@ -1,6 +1,7 @@
 body {
   /* background-color: #f0f0f0; */
   background: url("../image/unsplash.jpg") center center;
+  
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
